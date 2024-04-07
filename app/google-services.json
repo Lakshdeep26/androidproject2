@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "89451021345",
+    "firebase_url": "https://project2-lakshdeepkaur-default-rtdb.firebaseio.com",
+    "project_id": "project2-lakshdeepkaur",
+    "storage_bucket": "project2-lakshdeepkaur.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:89451021345:android:8799093beab6abc73e0f60",
+        "android_client_info": {
+          "package_name": "com.example.project2_lakshdeepkaur"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAfE3DNELz2pAPDKr7EOg-YxTvxAYYx2oE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
