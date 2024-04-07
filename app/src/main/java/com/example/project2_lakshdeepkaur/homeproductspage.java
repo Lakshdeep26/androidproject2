@@ -25,7 +25,7 @@ public class homeproductspage extends AppCompatActivity {
 
         recView = (RecyclerView) findViewById(R.id.recView);
         recView.setLayoutManager(new LinearLayoutManager(this));
-
+        //test
 
         FirebaseRecyclerOptions<model> options =
                 new FirebaseRecyclerOptions.Builder<model>()
