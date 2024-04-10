@@ -1,5 +1,7 @@
 package com.example.project2_lakshdeepkaur;
 
+import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,41 +15,62 @@ import com.bumptech.glide.Glide;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
 
-public class myadapter extends FirebaseRecyclerAdapter<model,myadapter.myviewholder> {
+public class myadapter extends FirebaseRecyclerAdapter<model, myadapter.myviewholder> {
 
+    private Context context;
 
-    public myadapter(@NonNull FirebaseRecyclerOptions<model> options) {
+    public myadapter(@NonNull FirebaseRecyclerOptions<model> options, Context context) {
         super(options);
+        this.context = context;
     }
 
     @Override
-    protected void onBindViewHolder(@NonNull myviewholder myviewholder, int i, @NonNull model model) {
-
-        myadapter.myviewholder holder = myviewholder;
-        holder.Title.setText(model.getTitle());
-        holder.Price.setText(model.getPrice());
-        holder.Description.setText(model.getDescription());
-        Glide.with(holder.img.getContext()).load(model.getPurl()).into(holder.img);
-
+    protected void onBindViewHolder(@NonNull myviewholder holder, int position, @NonNull model model) {
+        holder.bind(model);
     }
 
     @NonNull
     @Override
     public myviewholder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view= LayoutInflater.from(parent.getContext()).inflate(R.layout.singlerow,parent,false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.singlerow, parent, false);
         return new myviewholder(view);
     }
 
-    class myviewholder extends RecyclerView.ViewHolder{
+    class myviewholder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
-      ImageView img;
-      TextView Title,Price,Description;
+        ImageView img;
+        TextView Title, Price, Description;
+
         public myviewholder(@NonNull View itemView) {
             super(itemView);
-            img=(ImageView)itemView.findViewById(R.id.img1);
-            Title=(TextView)itemView.findViewById(R.id.titleText);
-            Price=(TextView)itemView.findViewById(R.id.priceText);
-            Description=(TextView)itemView.findViewById(R.id.descriptionText);
+            img = itemView.findViewById(R.id.img1);
+            Title = itemView.findViewById(R.id.titleText);
+            Price = itemView.findViewById(R.id.priceText);
+            Description = itemView.findViewById(R.id.descriptionText);
+
+            // Set click listener
+            itemView.setOnClickListener(this);
+        }
+
+        public void bind(model model) {
+            Title.setText(model.getTitle());
+            Price.setText(model.getPrice());
+            Description.setText(model.getDescription());
+            Glide.with(context).load(model.getPurl()).into(img);
+        }
+
+        @Override
+        public void onClick(View view) {
+            int position = getAdapterPosition();
+            if (position != RecyclerView.NO_POSITION) {
+                model clickedItem = getItem(position);
+                Intent intent = new Intent(context, ProductDetailActivity.class);
+                intent.putExtra("title", clickedItem.getTitle());
+                intent.putExtra("price", clickedItem.getPrice());
+                intent.putExtra("description", clickedItem.getDescription());
+                intent.putExtra("purl", clickedItem.getPurl());
+                context.startActivity(intent);
+            }
         }
     }
 }

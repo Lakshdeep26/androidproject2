@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
-    <uses-permission android:name="android.permission.INTERNET"/>
+
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -14,11 +15,15 @@
         android:theme="@style/Theme.Project2_LakshdeepKaur"
         tools:targetApi="31">
         <activity
+            android:name=".ProductDetailActivity"
+            android:exported="false" />
+        <activity
             android:name=".homeproductspage"
             android:exported="false" />
         <activity
             android:name=".registerActivity"
             android:exported="false" />
+        <activity android:name=".singlerow" />
         <activity
             android:name=".MainActivity"
             android:exported="true">

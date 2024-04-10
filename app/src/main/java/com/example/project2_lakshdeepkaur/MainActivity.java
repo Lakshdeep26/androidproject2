@@ -39,6 +39,9 @@ public class MainActivity extends AppCompatActivity {
 
         setContentView(R.layout.activity_main);
 
+//        Intent i = new Intent(this, homeproductspage.class);
+//        startActivity(i);
+
 
         createNewAccount = findViewById(R.id.createNewAccount);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);

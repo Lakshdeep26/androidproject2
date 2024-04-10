@@ -1,38 +1,38 @@
 package com.example.project2_lakshdeepkaur;
 
-public class model {String title,price, description, purl;
+public class model {String Title, Price, Description, purl;
 model(){
 
 }
     public model(String title, double price, String description, String purl) {
-        this.title = title;
-        this.price = String.valueOf(price);
-        this.description = description;
+        this.Title = title;
+        this.Price = String.valueOf(price);
+        this.Description = description;
         this.purl = purl;
     }
 
     public String getTitle() {
-        return title;
+        return Title;
     }
 
     public void setTitle(String title) {
-        this.title = title;
+        this.Title = title;
     }
 
     public String getPrice() {
-        return price;
+        return Price;
     }
 
     public void setPrice(String price) {
-        this.price = price;
+        this.Price = price;
     }
 
     public String getDescription() {
-        return description;
+        return Description;
     }
 
     public void setDescription(String description) {
-        this.description = description;
+        this.Description = description;
     }
 
     public String getPurl() {

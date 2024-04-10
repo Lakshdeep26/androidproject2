@@ -32,7 +32,7 @@ public class homeproductspage extends AppCompatActivity {
                         .setQuery(FirebaseDatabase.getInstance().getReference().child("Products"), model.class)
                         .build();
 
-        adapter = new myadapter(options);
+        adapter = new myadapter(options,this);
         recView.setAdapter(adapter);
 
     }
