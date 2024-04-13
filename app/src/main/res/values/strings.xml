@@ -15,4 +15,8 @@
     <string name="minus">-</string>
     <string name="_1">1</string>
     <string name="plus">+</string>
+    <string name="product_title">Product Title</string>
+    <string name="product_description">Product Description</string>
+    <string name="price_10">Price: $10</string>
+    <string name="min">-</string>
 </resources>
