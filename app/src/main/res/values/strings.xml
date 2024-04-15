@@ -19,4 +19,26 @@
     <string name="product_description">Product Description</string>
     <string name="price_10">Price: $10</string>
     <string name="min">-</string>
+    <string name="your_cart_is_empty">Your Cart is Empty</string>
+    <string name="welcome_to_cart">Welcome to Cart</string>
+    <string name="dollar_sign">$-</string>
+    <string name="subtotal">Subtotal</string>
+    <string name="discount">Discount</string>
+    <string name="total_tax">Total Tax</string>
+    <string name="Subtotal">Subtotal</string>
+    <string name="total">Total</string>
+    <string name="Discount">discount</string>
+    <string name="button">Button</string>
+    <string name="checkout">CheckOut</string>
+    <string name="check_out">Check Out</string>
+    <string name="go_back">Go Back</string>
+    <string name="Title">title</string>
+    <string name="priceincart">$0</string>
+    <string name="Cartplus">+</string>
+    <string name="minussub">Minus</string>
+    <string name="addition">Add</string>
+    <string name="addtocart">+</string>
+    <string name="quantity_1">1</string>
+    <string name="minusfromcart">-</string>
+    <string name="get_started">Get Started</string>
 </resources>

@@ -1,6 +1,9 @@
 package com.example.project2_lakshdeepkaur;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.ImageView;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -26,7 +29,15 @@ public class homeproductspage extends AppCompatActivity {
         recView = (RecyclerView) findViewById(R.id.recView);
         recView.setLayoutManager(new LinearLayoutManager(this));
         //test
-
+        ImageView cartImageView = findViewById(R.id.cartImageView);
+        cartImageView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Handle click event, navigate to cart page
+                Intent intent = new Intent(homeproductspage.this, CartActivity.class);
+                startActivity(intent);
+            }
+        });
         FirebaseRecyclerOptions<model> options =
                 new FirebaseRecyclerOptions.Builder<model>()
                         .setQuery(FirebaseDatabase.getInstance().getReference().child("Products"), model.class)
